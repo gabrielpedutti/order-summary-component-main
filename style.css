@@ -1,0 +1,155 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background {
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.background > img {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+body {
+    background-color: var(--pale-blue);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.container {
+    background-color: white;
+    width: 400px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    width: 100%;
+}
+
+h1 {
+    padding: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 26px;
+    color: var(--dark-blue);
+}
+
+p{
+    color: var(--desaturated-blue);
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.plan {
+    display: grid;
+    grid-template-areas: 
+        "image h2 change"
+        "image p change";
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: var(--very-pale-blue);
+    margin: 40px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+h2{
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-weight: 900;
+    grid-area: h2;
+}
+
+.plan > img {
+    grid-area: image;
+}
+
+.plan > p{
+    grid-area: p;
+    padding: 0;
+    text-align: left;
+}
+
+.plan > a{
+    grid-area: change;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    color: var(--bright-blue);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.plan > a:hover {
+    opacity: 80%;
+    transition: 0.4s;
+}
+
+button {
+    background-color: var(--bright-blue);
+    border: none;
+    padding: 15px;
+    margin: 0 40px;
+    font-weight: 900;
+    color: white;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -10px var(--bright-blue);
+}
+
+button:hover {
+    opacity: 80%;
+    transition: 0.4s;
+}
+
+.container > a {
+    color: var(--desaturated-blue);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    margin: 30px;
+}
+
+.container > a:hover {
+    color: var(--dark-blue);
+    transition: 0.4s;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (max-width: 800px) {
+    .container {
+        width: 380px;
+    }
+}
